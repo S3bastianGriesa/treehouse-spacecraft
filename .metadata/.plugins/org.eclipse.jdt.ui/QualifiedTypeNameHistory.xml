@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.treehouse.spacecraft.core.data.entity.Entity"/>
 <fullyQualifiedTypeName name="java.rmi.server.RMIClientSocketFactory"/>
+<fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
 </qualifiedTypeNameHistroy>
