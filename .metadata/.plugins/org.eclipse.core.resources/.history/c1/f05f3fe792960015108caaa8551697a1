@@ -1,0 +1,8 @@
+package com.treehouse.spacecraft.server;
+
+import java.rmi.server.RemoteServer;
+
+public class Server extends RemoteServer{
+	
+
+}

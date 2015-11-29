@@ -1,0 +1,5 @@
+package de.thg.blockx2D.data.entity;
+
+public enum EntityType {
+	TEST
+}

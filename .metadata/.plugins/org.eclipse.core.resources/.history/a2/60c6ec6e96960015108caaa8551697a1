@@ -1,0 +1,5 @@
+package com.treehouse.spacecraft.core.data.entity;
+
+public class DefaultEntity extends AbstractEntity{
+
+}

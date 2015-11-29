@@ -1,0 +1,10 @@
+package com.treehouse.spacecraft.core.data.entity;
+
+public class DefaultEntity extends AbstractEntity{
+
+	public DefaultEntity(double x, double y, double width, double height) {
+		super(x, y, width, height);
+		// TODO Auto-generated constructor stub
+	}
+
+}

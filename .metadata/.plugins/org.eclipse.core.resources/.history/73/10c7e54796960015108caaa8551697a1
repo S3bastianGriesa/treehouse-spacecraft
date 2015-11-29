@@ -1,0 +1,12 @@
+package com.treehouse.spacecraft.server;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface ReceiveMessageInterface extends Remote{
+	
+	public void receiveMessage(String x) throws RemoteException;
+	
+	public void sendInt(int i) throws RemoteException;
+
+}

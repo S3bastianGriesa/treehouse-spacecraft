@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spacecraft-android/assets/ogame_space_ship_wallpaper_by_tobioh.jpg&apos; to &apos;spaceship_wallpaper.jpg&apos;" description="Rename resource &apos;ogame_space_ship_wallpaper_by_tobioh.jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="assets/ogame_space_ship_wallpaper_by_tobioh.jpg" name="spaceship_wallpaper.jpg" stamp="1448787315934" updateReferences="true"/>
+</session>

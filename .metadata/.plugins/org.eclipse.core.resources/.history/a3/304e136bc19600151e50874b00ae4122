@@ -1,0 +1,11 @@
+package com.treehouse.spacecraft.network;
+
+import java.io.Serializable;
+
+public class InputCommand implements Serializable{
+
+	private static final long serialVersionUID = 6786102974214499106L;
+	private boolean increaseVelocity;
+	private float rotation;
+
+}

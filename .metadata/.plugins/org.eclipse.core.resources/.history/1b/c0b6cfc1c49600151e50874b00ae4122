@@ -1,0 +1,46 @@
+package com.treehouse.spacecraft.client;
+
+import java.rmi.registry.Registry;
+
+import com.treehouse.spacecraft.network.SpacecraftProtocol;
+
+public class Client {
+
+	private SpacecraftProtocol server;
+	private Registry registry;
+	private int port;
+	private String address;
+
+	public SpacecraftProtocol getServer() {
+		return server;
+	}
+
+	public void setServer(SpacecraftProtocol server) {
+		this.server = server;
+	}
+
+	public Registry getRegistry() {
+		return registry;
+	}
+
+	public void setRegistry(Registry registry) {
+		this.registry = registry;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+}

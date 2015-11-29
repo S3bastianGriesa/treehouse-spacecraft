@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spacecraft-common/src/com/treehouse/spacecraft/server&apos; to &apos;network&apos;" description="Rename resource &apos;server&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/treehouse/spacecraft/server" name="network" stamp="1448817240081" updateReferences="true"/>
+</session>

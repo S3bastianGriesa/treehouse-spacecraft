@@ -1,0 +1,7 @@
+package com.treehouse.spacecraft.network;
+
+import java.io.Serializable;
+
+public class InputCommand implements Serializable{
+
+}

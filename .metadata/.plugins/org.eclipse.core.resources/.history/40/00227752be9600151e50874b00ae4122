@@ -1,0 +1,19 @@
+package com.treehouse.spacecraft.server;
+
+import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+
+import com.treehouse.spacecraft.network.SpacecraftProtocol;
+
+public class Server extends UnicastRemoteObject implements SpacecraftProtocol{
+
+	private static final long serialVersionUID = -8368134709255563426L;
+	private int port;
+	private Registry registry;
+
+	protected Server() throws RemoteException {
+		super();
+	}
+
+}

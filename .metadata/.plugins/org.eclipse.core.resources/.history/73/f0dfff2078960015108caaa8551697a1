@@ -1,0 +1,9 @@
+package com.treehouse.spacecraft.core.data.entity;
+
+public interface MoveableEntity extends Entity {
+	public EntityType getType();
+
+	public float getSpeed();
+	
+	public float getRotation();
+}
