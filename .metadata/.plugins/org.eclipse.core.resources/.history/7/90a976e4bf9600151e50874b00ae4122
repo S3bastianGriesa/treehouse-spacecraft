@@ -1,7 +1,0 @@
-package com.treehouse.spacecraft.network;
-
-import java.rmi.Remote;
-
-public interface SpacecraftProtocol extends Remote{
-
-}

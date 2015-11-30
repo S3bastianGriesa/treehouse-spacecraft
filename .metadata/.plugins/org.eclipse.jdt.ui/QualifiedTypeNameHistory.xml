@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.treehouse.spacecraft.core.data.entity.Entity"/>
-<fullyQualifiedTypeName name="java.rmi.server.RMIClientSocketFactory"/>
-<fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
-</qualifiedTypeNameHistroy>
