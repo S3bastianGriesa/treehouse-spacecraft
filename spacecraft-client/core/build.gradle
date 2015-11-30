@@ -4,7 +4,8 @@ sourceCompatibility = 1.6
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 sourceSets.main.java.srcDirs = [ "src/" ]
-
+includeFlat 'spacecraft-server'
+compile project(':spacecraft-server')
 
 eclipse.project {
     name = appName + "-core"
