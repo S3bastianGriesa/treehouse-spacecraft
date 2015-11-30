@@ -1,6 +1,7 @@
 package com.treehouse.spacecraft.core.data.entity;
 
 import java.io.Serializable;
+import java.util.Vector;
 
 public abstract class AbstractMoveableEntity extends AbstractEntity implements MoveableEntity, Serializable {
 	/**
@@ -8,7 +9,7 @@ public abstract class AbstractMoveableEntity extends AbstractEntity implements M
 	 */
 	private static final long serialVersionUID = -4801582320588265632L;
 	private float moveSpeed, rotation;
-
+	private Vector<Float> velocity;
 
 	public AbstractMoveableEntity(double x, double y, double width, double height) {
 		super(x, y, width, height);
@@ -20,22 +21,33 @@ public abstract class AbstractMoveableEntity extends AbstractEntity implements M
 
 	}
 
-	public abstract EntityType getType();
-
 	@Override
 	public float getSpeed() {
 		return this.moveSpeed;
 	}
-	
-	public void setSpeed(float speed){
+
+	@Override
+	public void setSpeed(float speed) {
 		this.moveSpeed = speed;
 	}
-	
-	public float getRotation(){
+
+	@Override
+	public float getRotation() {
 		return this.rotation;
 	}
-	
-	public void setRotation(float rotation){
+
+	@Override
+	public void setRotation(float rotation) {
 		this.rotation = rotation;
+	}
+
+	@Override
+	public Vector<Float> getVelocity() {
+		return velocity;
+	}
+
+	@Override
+	public void setVelocity(Vector<Float> velo) {
+		this.velocity = velo;
 	}
 }
