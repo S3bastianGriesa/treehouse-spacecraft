@@ -8,10 +8,12 @@ public class User {
 
 	private String name;
 	private MoveableEntity e;
+	private long lastPing;
 
 	public User(String user) {
 		this.name = user;
 		this.e = new DefaultMoveableEntity(200, 200, 256, 256);
+		e.setName(user);
 	}
 
 	public String getName() {
@@ -35,7 +37,11 @@ public class User {
 			e.setY(e.getY() - y * -e.getSpeed());
 
 		}
-		
+		lastPing = System.currentTimeMillis();
+	}
+	
+	public boolean isConnected(){
+		return ((System.currentTimeMillis() - lastPing) < 1000);
 	}
 
 }

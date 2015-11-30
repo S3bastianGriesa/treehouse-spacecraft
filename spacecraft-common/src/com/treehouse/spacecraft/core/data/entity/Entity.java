@@ -10,6 +10,10 @@ public interface Entity {
 	public void setID(long id);
 	
 	public long getID();
+	
+	public String getName();
+	
+	public void setName(String name);
 
 	public void setX(float x);
 

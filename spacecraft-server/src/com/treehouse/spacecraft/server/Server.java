@@ -7,6 +7,9 @@ import java.rmi.registry.Registry;
 import java.rmi.server.ServerNotActiveException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map.Entry;
 
 import com.treehouse.spacecraft.core.data.entity.MoveableEntity;
 import com.treehouse.spacecraft.network.InputCommand;
@@ -27,9 +30,9 @@ public class Server extends UnicastRemoteObject implements SpacecraftProtocol {
 	public void start() throws RemoteException {
 		registry = LocateRegistry.createRegistry(port);
 		registry.rebind("rmiServer", this);
-		 System.out.println("listening on: " + port);
+		System.out.println("listening on: " + port);
 	}
-	
+
 	public void shutDown() throws NotBoundException, RemoteException {
 		registry.unbind("rmiServer");
 	}
@@ -51,20 +54,39 @@ public class Server extends UnicastRemoteObject implements SpacecraftProtocol {
 	}
 
 	@Override
-	public MoveableEntity updatePosition(InputCommand ic) throws RemoteException {
-		String user = "";
-		try {
-			user = getClientHost();
-		} catch (ServerNotActiveException e) {
-			e.printStackTrace();
+	public MoveableEntity updatePosition(InputCommand ic, String user) throws RemoteException {
+		if (user == null || user.isEmpty()) {
+			try {
+				user = getClientHost();
+			} catch (ServerNotActiveException e) {
+				e.printStackTrace();
+			}
 		}
-		if(!users.containsKey(user)){
+		if (!users.containsKey(user)) {
 			users.put(user, new User(user));
 			System.out.println("User connected: " + user);
 		}
 		User u = users.get(user);
 		u.updateEntity(ic);
 		return u.getEntity();
+	}
+
+	@Override
+	public List<MoveableEntity> getEntities(String user) throws RemoteException {
+		if (user == null || user.isEmpty()) {
+			try {
+				user = getClientHost();
+			} catch (ServerNotActiveException e1) {
+				e1.printStackTrace();
+			}
+		}
+		LinkedList<MoveableEntity> entities = new LinkedList<MoveableEntity>();
+		for (Entry<String, User> e : users.entrySet()) {
+			if (!e.getValue().getName().equals(user) && e.getValue().isConnected()) {
+				entities.add(e.getValue().getEntity());
+			}
+		}
+		return entities;
 	}
 
 }

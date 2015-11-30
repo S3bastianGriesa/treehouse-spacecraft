@@ -11,6 +11,7 @@ public abstract class AbstractEntity implements Entity, Serializable {
 	protected float x, y, width, height;
 	protected Rectangle hitbox;
 	protected long id;
+	protected String name;
 
 	public AbstractEntity(float x, float y, float width, float height) {
 		hitbox = new Rectangle();
@@ -19,7 +20,18 @@ public abstract class AbstractEntity implements Entity, Serializable {
 		setWidth(width);
 		setHeight(height);
 	}
-
+	
+	
+	@Override
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	@Override
+	public String getName(){
+		return this.name;
+	}
+	
 	@Override
 	public void setLocation(float x, float y) {
 		setX(x);
