@@ -5,27 +5,27 @@ import java.awt.Rectangle;
 public interface Entity {
 	public void update(long delta);
 
-	public void setLocation(double x, double y);
+	public void setLocation(float x, float y);
 	
 	public void setID(long id);
 	
 	public long getID();
 
-	public void setX(double x);
+	public void setX(float x);
 
-	public void setY(double y);
+	public void setY(float y);
 
-	public void setWidth(double width);
+	public void setWidth(float width);
 
-	public void setHeight(double height);
+	public void setHeight(float height);
 
-	public double getX();
+	public float getX();
 
-	public double getY();
+	public float getY();
 
-	public double getHeight();
+	public float getHeight();
 
-	public double getWidth();
+	public float getWidth();
 
 	public boolean intersects(Entity other);
 

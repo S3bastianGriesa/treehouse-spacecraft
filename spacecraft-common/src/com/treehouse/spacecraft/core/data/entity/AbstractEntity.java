@@ -8,11 +8,11 @@ public abstract class AbstractEntity implements Entity, Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 2126435635996441409L;
-	protected double x, y, width, height;
+	protected float x, y, width, height;
 	protected Rectangle hitbox;
 	protected long id;
 
-	public AbstractEntity(double x, double y, double width, double height) {
+	public AbstractEntity(float x, float y, float width, float height) {
 		hitbox = new Rectangle();
 		setX(x);
 		setY(y);
@@ -21,52 +21,52 @@ public abstract class AbstractEntity implements Entity, Serializable {
 	}
 
 	@Override
-	public void setLocation(double x, double y) {
+	public void setLocation(float x, float y) {
 		setX(x);
 		setY(y);
 	}
 
 	@Override
-	public void setX(double x) {
+	public void setX(float x) {
 		this.x = x;
 		hitbox.x = (int) x;
 	}
 
 	@Override
-	public void setY(double y) {
+	public void setY(float y) {
 		this.y = y;
 		hitbox.y = (int) y;
 	}
 
 	@Override
-	public void setWidth(double width) {
+	public void setWidth(float width) {
 		this.width = width;
 		hitbox.width = (int) width;
 	}
 
 	@Override
-	public void setHeight(double height) {
+	public void setHeight(float height) {
 		this.height = height;
 		hitbox.height = (int) height;
 	}
 
 	@Override
-	public double getX() {
+	public float getX() {
 		return this.x;
 	}
 
 	@Override
-	public double getY() {
+	public float getY() {
 		return this.y;
 	}
 
 	@Override
-	public double getHeight() {
+	public float getHeight() {
 		return this.height;
 	}
 
 	@Override
-	public double getWidth() {
+	public float getWidth() {
 		return this.width;
 	}
 

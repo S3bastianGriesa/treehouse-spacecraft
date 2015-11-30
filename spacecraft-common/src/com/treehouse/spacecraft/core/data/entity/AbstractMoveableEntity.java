@@ -11,7 +11,7 @@ public abstract class AbstractMoveableEntity extends AbstractEntity implements M
 	private float moveSpeed, rotation;
 	private Vector<Float> velocity;
 
-	public AbstractMoveableEntity(double x, double y, double width, double height) {
+	public AbstractMoveableEntity(float x, float y, float width, float height) {
 		super(x, y, width, height);
 		moveSpeed = 2f;
 	}

@@ -4,7 +4,9 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.ServerNotActiveException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.HashMap;
 
 import com.treehouse.spacecraft.core.data.entity.MoveableEntity;
 import com.treehouse.spacecraft.network.InputCommand;
@@ -15,14 +17,17 @@ public class Server extends UnicastRemoteObject implements SpacecraftProtocol {
 	private static final long serialVersionUID = -8368134709255563426L;
 	private int port;
 	private Registry registry;
+	private HashMap<String, User> users;
 
 	protected Server() throws RemoteException {
 		super();
+		users = new HashMap<String, User>();
 	}
 
 	public void start() throws RemoteException {
 		registry = LocateRegistry.createRegistry(port);
 		registry.rebind("rmiServer", this);
+		 System.out.println("listening on: " + port);
 	}
 	
 	public void shutDown() throws NotBoundException, RemoteException {
@@ -47,8 +52,19 @@ public class Server extends UnicastRemoteObject implements SpacecraftProtocol {
 
 	@Override
 	public MoveableEntity updatePosition(InputCommand ic) throws RemoteException {
-		
-		return null;
+		String user = "";
+		try {
+			user = getClientHost();
+		} catch (ServerNotActiveException e) {
+			e.printStackTrace();
+		}
+		if(!users.containsKey(user)){
+			users.put(user, new User(user));
+			System.out.println("User connected: " + user);
+		}
+		User u = users.get(user);
+		u.updateEntity(ic);
+		return u.getEntity();
 	}
 
 }
