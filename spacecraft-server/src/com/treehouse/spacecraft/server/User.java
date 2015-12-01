@@ -33,8 +33,8 @@ public class User {
 		if(ic.isIncreaseVelocity()){
 			float x =(float) Math.sin(Math.toRadians(e.getRotation()));
 			float y = (float) Math.cos(Math.toRadians(e.getRotation()));		
-			e.setX(e.getX() - x * e.getSpeed());
-			e.setY(e.getY() - y * -e.getSpeed());
+			e.setX(e.getX() - x * e.getSpeed()*3);
+			e.setY(e.getY() - y * -e.getSpeed()*3);
 
 		}
 		lastPing = System.currentTimeMillis();
